@@ -11,6 +11,7 @@ export class FaceSnapComponent {
   createdDate!: Date;
   snaps!: number;
   imageUrl!: string;
+  snaped!: boolean;
 
   ngOnInit() {
     this.title = 'Etienne';
@@ -19,5 +20,16 @@ export class FaceSnapComponent {
     this.snaps = 8;
     this.imageUrl =
       'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
+    this.snaped = false;
+  }
+
+  onSnap() {
+    if (this.snaped) {
+      this.snaps--;
+      this.snaped = false;
+    } else {
+      this.snaps++;
+      this.snaped = true;
+    }
   }
 }

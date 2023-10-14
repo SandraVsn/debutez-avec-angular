@@ -3,5 +3,10 @@
   <p>Mis en ligne le {{ createdDate }}</p>
   <img [src]="imageUrl" [alt]="title" />
   <p>{{ description }}</p>
-  <p>{{ snaps }}</p>
+  <p>
+    <button (click)="onSnap()">
+      {{ snaped ? "Oops, un snap" : "Oh snap" }}
+    </button>
+    {{ snaps }}
+  </p>
 </div>
