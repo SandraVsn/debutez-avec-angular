@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FaceSnap } from '../models/face-snap.model';
 
 @Component({
   selector: 'app-face-snap',
@@ -6,30 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./face-snap.component.scss'],
 })
 export class FaceSnapComponent {
-  title!: string;
-  description!: string;
-  createdDate!: Date;
-  snaps!: number;
-  imageUrl!: string;
-  snaped!: boolean;
+  @Input() faceSnap!: FaceSnap;
+
+  buttonText!: string;
 
   ngOnInit() {
-    this.title = 'Etienne';
-    this.description = "L'amour de ma vie";
-    this.createdDate = new Date();
-    this.snaps = 8;
-    this.imageUrl =
-      'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
-    this.snaped = false;
+    this.buttonText = 'Oh Snap';
   }
 
   onSnap() {
-    if (this.snaped) {
-      this.snaps--;
-      this.snaped = false;
+    if (this.buttonText === 'Oh Snap!') {
+      this.faceSnap.snaps++;
+      this.buttonText = 'Oops, unSnap!';
     } else {
-      this.snaps++;
-      this.snaped = true;
+      this.faceSnap.snaps--;
+      this.buttonText = 'Oh Snap!';
     }
   }
 }
