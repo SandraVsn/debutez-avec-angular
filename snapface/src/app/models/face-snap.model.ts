@@ -1,15 +1,8 @@
-export class FaceSnap {
-  constructor(
-    public title: string,
-    public description: string,
-    public snaps: number,
-    public imageUrl: string,
-    public createdDate: Date
-  ) {
-    this.title = title;
-    this.description = description;
-    this.createdDate = createdDate;
-    this.snaps = snaps;
-    this.imageUrl = imageUrl;
-  }
+export interface FaceSnap {
+  title: string;
+  description: string;
+  snaps: number;
+  imageUrl: string;
+  createdDate: Date;
+  location?: string;
 }
