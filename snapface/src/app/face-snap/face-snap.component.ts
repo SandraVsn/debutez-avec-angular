@@ -12,7 +12,7 @@ export class FaceSnapComponent {
   buttonText!: string;
 
   ngOnInit() {
-    this.buttonText = 'Oh Snap';
+    this.buttonText = 'Oh Snap!';
   }
 
   onSnap() {
