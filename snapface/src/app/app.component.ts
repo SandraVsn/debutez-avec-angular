@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FaceSnap } from './models/face-snap.model';
 import {
   Observable,
+  concatMap,
   delay,
   filter,
   interval,
@@ -32,7 +33,7 @@ export class AppComponent implements OnInit {
             `color: ${this.translateColor(color)}`
           )
         ),
-        mergeMap((color) => this.getTrainObservable$(color)),
+        concatMap((color) => this.getTrainObservable$(color)),
         tap((train) =>
           console.log(
             `Train %c${train.color} ${train.trainIndex} arrivé !`,
