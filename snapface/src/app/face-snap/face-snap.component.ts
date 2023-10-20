@@ -23,7 +23,7 @@ export class FaceSnapComponent {
       this.faceSnapsService.snapFaceSnapById(this.faceSnap.id);
       this.buttonText = 'Oops, unSnap!';
     } else {
-      this.faceSnap.snaps--;
+      this.faceSnapsService.unsnapFaceSnapById(this.faceSnap.id);
       this.buttonText = 'Oh Snap!';
     }
   }

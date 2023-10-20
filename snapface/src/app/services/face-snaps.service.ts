@@ -49,4 +49,13 @@ export class FaceSnapsService {
       throw new Error(`FaceSnap with id ${id} not found !`);
     }
   }
+
+  unsnapFaceSnapById(id: number): void {
+    const snapToUpdate = this.faceSnaps.find((snap) => snap.id === id);
+    if (snapToUpdate) {
+      snapToUpdate.snaps--;
+    } else {
+      throw new Error(`FaceSnap with id ${id} not found !`);
+    }
+  }
 }
