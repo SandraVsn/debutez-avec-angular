@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
        {
         title: 'Elise',
         description: `La meilleure amie de l'univers`,
-        snaps: 6,
+        snaps: 40,
         imageUrl:
           'https://images.pexels.com/photos/10456227/pexels-photo-10456227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         createdDate: new Date(),
