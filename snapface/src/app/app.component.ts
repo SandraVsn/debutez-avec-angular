@@ -10,6 +10,7 @@ import {
   map,
   mergeMap,
   of,
+  switchMap,
   take,
   tap,
 } from 'rxjs';
@@ -34,7 +35,7 @@ export class AppComponent implements OnInit {
             `color: ${this.translateColor(color)}`
           )
         ),
-        exhaustMap((color) => this.getTrainObservable$(color)),
+        switchMap((color) => this.getTrainObservable$(color)),
         tap((train) =>
           console.log(
             `Train %c${train.color} ${train.trainIndex} arrivé !`,
