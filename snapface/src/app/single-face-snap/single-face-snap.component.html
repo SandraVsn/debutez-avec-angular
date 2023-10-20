@@ -2,6 +2,7 @@
   class="face-snap-card"
   [ngClass]="{ snapped: buttonText === 'Oops, unSnap!' }"
 >
+  <a routerLink="/facesnaps">Back</a>
   <h2>{{ faceSnap.title | uppercase }}</h2>
   <p>
     Mis en ligne le {{ faceSnap.createdDate | date : "dd MMMM yyy, à HH:mm" }}
