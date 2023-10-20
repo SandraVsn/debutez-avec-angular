@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FaceSnap } from './models/face-snap.model';
+import { Observable, interval } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,9 @@ import { FaceSnap } from './models/face-snap.model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  ngOnInit(): void {}
+  interval$!: Observable<number>;
+
+  ngOnInit(): void {
+    this.interval$ = interval(1000);
+  }
 }
