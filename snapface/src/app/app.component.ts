@@ -4,6 +4,7 @@ import {
   Observable,
   concatMap,
   delay,
+  exhaustMap,
   filter,
   interval,
   map,
@@ -33,7 +34,7 @@ export class AppComponent implements OnInit {
             `color: ${this.translateColor(color)}`
           )
         ),
-        concatMap((color) => this.getTrainObservable$(color)),
+        exhaustMap((color) => this.getTrainObservable$(color)),
         tap((train) =>
           console.log(
             `Train %c${train.color} ${train.trainIndex} arrivé !`,
