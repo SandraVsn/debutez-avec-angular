@@ -7,8 +7,5 @@ import { FaceSnap } from './models/face-snap.model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 }
