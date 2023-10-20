@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FaceSnap } from './models/face-snap.model';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,18 @@ import { FaceSnap } from './models/face-snap.model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const interval$ = interval(1000);
+
+    interval$.subscribe((value) => {
+      console.log(value);
+    });
+    setTimeout(
+      () =>
+        interval$.subscribe((value) => {
+          console.log(value);
+        }),
+      3000
+    );
+  }
 }
