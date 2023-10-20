@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FaceSnap } from './models/face-snap.model';
-import { Observable, interval, map } from 'rxjs';
+import { Observable, filter, interval, map } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.interval$ = interval(1000).pipe(
+      filter((value) => value % 3 === 0),
       map((value) =>
         value % 2 === 0
           ? `Je suis ${value} et je suis pair`
