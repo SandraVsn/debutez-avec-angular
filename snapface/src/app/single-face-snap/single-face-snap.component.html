@@ -1,5 +1,6 @@
 <div
   class="face-snap-card"
+  *ngIf="faceSnap$ | async as faceSnap"
   [ngClass]="{ snapped: buttonText === 'Oops, unSnap!' }"
 >
   <a routerLink="/facesnaps">Back</a>
