@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FaceSnap } from '../../../core/models/face-snap.model';
 import { FaceSnapsService } from '../../../core/services/face-snaps.service';
-import { Observable, Subject, interval, take, takeUntil, tap } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-face-snap-list',
@@ -10,7 +10,6 @@ import { Observable, Subject, interval, take, takeUntil, tap } from 'rxjs';
 })
 export class FaceSnapListComponent implements OnInit {
   faceSnaps$!: Observable<FaceSnap[]>;
-  private destroy$!: Subject<boolean>;
 
   constructor(private faceSnapsService: FaceSnapsService) {}
 
